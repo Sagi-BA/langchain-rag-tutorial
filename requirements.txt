@@ -19,3 +19,4 @@ pytesseract # Tesseract is an open source OCR or optical character recognition e
 streamlit # fOR THE GUID
 retrying
 poppler-utils
+pdf2image
