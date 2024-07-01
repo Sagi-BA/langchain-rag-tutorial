@@ -51,7 +51,7 @@ pip install "unstructured[md]"
 
 ## Usage
 
-To use the application, execute the `main.py` file using the Streamlit CLI. Make sure you have Streamlit installed before running the application. Run the following command in your terminal:
+To use the application, execute the `main.py` file using the Streamlit CLI. Make sure you have [Streamlit installed](https://docs.streamlit.io/) before running the application. Run the following command in your terminal:
 
 ```
 streamlit run main.py
