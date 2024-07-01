@@ -1,0 +1,12 @@
+.env
+chroma
+.DS_Store
+tutorial
+*.bat
+data/old/
+scripts
+.vscode
+__pycache__
+uploads
+langchain-rag-tutorial.code-workspace
+
