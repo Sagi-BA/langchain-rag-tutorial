@@ -1,11 +1,13 @@
 from dotenv import load_dotenv
 import os
 import shutil
+import pdf2image
 import streamlit as st
 from src.pdf_converter import PDFConverter  # Import the PDFConverter class
 from src.data_store_generator import DataStoreGenerator  # Import the DataStoreGenerator class
 from src.data_query import DataQuery  # Import the DataQuery class
 from datetime import datetime
+import pytesseract
 
 # Set the page configuration
 st.set_page_config(
@@ -129,7 +131,12 @@ def step_2(pdf_file):
         # Create an instance of PDFConverter and convert the PDF to Markdown
         with st.spinner(text="In progress..."):
             converter = PDFConverter()
-            converter.pdf_to_md(pdf_path, md_path, lang=language_code)
+            try:
+                converter.pdf_to_md(pdf_path, md_path, lang=language_code)
+            except pdf2image.exceptions.PDFInfoNotInstalledError:
+                st.error("Poppler is not installed. Please install Poppler to proceed.")
+            except pytesseract.pytesseract.TesseractNotFoundError:
+                st.error("Tesseract is not installed. Please install Tesseract to proceed.")
 
         # Read the converted Markdown file
         with open(md_path, "r", encoding="utf-8") as f:

@@ -2,7 +2,7 @@ python-dotenv # For reading environment variables stored in .env file
 langchain 
 langchain-community 
 langchain-openai # For embeddings
-# poppler-utils
+poppler-utils
 pdf2image
 unstructured # Document loading
 # onnxruntime==1.17.1 # chromadb dependency: on Mac use `conda install onnxruntime -c conda-forge`
