@@ -16,6 +16,11 @@ st.set_page_config(
 # Load environment variables. Assumes that project contains .env file with API keys
 load_dotenv()
 
+# Add poppler path to system PATH
+poppler_path = os.path.join(os.path.dirname(__file__), 'poppler_binaries', 'bin')  # Update this path based on your directory structure
+os.environ["PATH"] += os.pathsep + poppler_path
+
+
 # Initialize session state for history
 if 'history' not in st.session_state:
     st.session_state.history = []
