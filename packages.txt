@@ -1,5 +1,3 @@
 --upgrade pip
+-y tesseract-ocr libtesseract-dev libleptonica-dev gcc
 poppler-utils
-tesseract-ocr
-libtesseract-dev
-libleptonica-dev
