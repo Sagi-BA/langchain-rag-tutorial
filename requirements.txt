@@ -1,5 +1,5 @@
 python-dotenv # For reading environment variables stored in .env file
-langchain 
+langchain the framework [https://www.langchain.com/]
 langchain-community 
 langchain-openai # For embeddings
 poppler-utils
@@ -8,7 +8,7 @@ unstructured # Document loading
 # onnxruntime==1.17.1 # chromadb dependency: on Mac use `conda install onnxruntime -c conda-forge`
 # For Windows users, install Microsoft Visual C++ Build Tools first
 # install onnxruntime before installing `chromadb`
-chromadb # Vector storage
+chromadb # Vector storage [https://docs.trychroma.com/]
 openai # For embeddings
 tiktoken # For embeddings 
 psutil
@@ -18,6 +18,6 @@ pdfplumber
 markdownify
 PyMuPDF 
 pytesseract # Tesseract is an open source OCR or optical character recognition engine https://github.com/UB-Mannheim/tesseract/wiki
-streamlit # fOR THE GUID
+streamlit # for the frontend [https //streamlit.io]
 retrying
 tesseract-ocr

@@ -31,9 +31,9 @@ The application Streamlit creates the graphical user interface (GUI) and utilize
     conda install onnxruntime -c conda-forge
    ```
 
-   See this [thread](https://github.com/microsoft/onnxruntime/issues/11037) for additonal help if needed.
+   See this [thread](https://github.com/microsoft/onnxruntime/issues/11037) for additional help if needed.
 
-   - For Windows users, follow the guide [here](https://github.com/bycloudai/InstallVSBuildToolsWindows?tab=readme-ov-file) to install the Microsoft C++ Build Tools. Be sure to follow through to the last step to set the enviroment variable path.
+   - For Windows users, follow the guide [here](https://github.com/bycloudai/InstallVSBuildToolsWindows?tab=readme-ov-file) to install the Microsoft C++ Build Tools. Be sure to follow through to the last step to set the environment variable path.
 
 2. Install Tesseract [here](https://github.com/UB-Mannheim/tesseract/wiki) is an open source OCR or optical character recognition engine and command line program.
 
@@ -51,11 +51,13 @@ pip install "unstructured[md]"
 
 ## Usage
 
-To use the application, execute the `main.py` file using the Streamlit CLI. Make sure you have [Streamlit installed](https://docs.streamlit.io/) before running the application. Run the following command in your terminal:
+Make sure you have [Streamlit installed](https://docs.streamlit.io/) CLI before running the application. Run the following command in your terminal:
 
 ```
 streamlit run main.py
 ```
+
+AI-native open-source vector database called [Chroma](https://docs.trychroma.com/).
 
 ## Contributing
 
