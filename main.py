@@ -23,11 +23,16 @@ print(os.pathsep + poppler_path)
 
 # Verify if poppler is in the PATH and accessible
 def check_poppler():
-    result = os.system("pdfinfo -v")
-    if result != 0:
-        st.error("Poppler is not installed or not found in the PATH. Please make sure poppler binaries are correctly installed and accessible.")
+    try:
+        result = os.system("pdfinfo -v")
+        if result != 0:
+            st.error("Poppler is not installed or not found in the PATH. Please make sure poppler binaries are correctly installed and accessible.")
+            return False
+        return True
+    except Exception as e:
+        st.error(f"Error checking Poppler installation: {e}")
         return False
-    return True
+
 
 # Initialize session state for history
 if 'history' not in st.session_state:
