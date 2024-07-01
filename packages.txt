@@ -1,3 +1,4 @@
+pip install --upgrade pip
 poppler-utils
 tesseract-ocr
 libtesseract-dev
