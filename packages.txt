@@ -1,1 +1,4 @@
+update
 poppler-utils
+libtesseract-dev
+libleptonica-dev
