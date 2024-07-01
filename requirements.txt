@@ -20,3 +20,4 @@ PyMuPDF
 pytesseract # Tesseract is an open source OCR or optical character recognition engine https://github.com/UB-Mannheim/tesseract/wiki
 streamlit # fOR THE GUID
 retrying
+tesseract-ocr
