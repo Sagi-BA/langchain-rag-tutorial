@@ -23,6 +23,24 @@ poppler_path = os.path.join(os.path.dirname(__file__), 'poppler_binaries', 'bin'
 os.environ["PATH"] += os.pathsep + poppler_path
 print(os.pathsep + poppler_path)
 
+def check_dependencies():
+    try:
+        # Check if pdfinfo is accessible
+        poppler_check = os.system("pdfinfo -v")
+        if poppler_check != 0:
+            st.error("Poppler is not installed or not found in the PATH. Please make sure poppler binaries are correctly installed and accessible.")
+            return False
+        # Check if tesseract is accessible
+        tesseract_check = os.system("tesseract -v")
+        if tesseract_check != 0:
+            st.error("Tesseract is not installed or not found in the PATH. Please make sure tesseract binaries are correctly installed and accessible.")
+            return False
+        return True
+    except Exception as e:
+        st.error(f"Error checking dependencies: {e}")
+        return False
+
+
 # Verify if poppler is in the PATH and accessible
 def check_poppler():
     try:
@@ -41,6 +59,9 @@ if 'history' not in st.session_state:
     st.session_state.history = []
 
 def main():
+    if not check_dependencies():
+        return
+    
     if not check_poppler():
         return
      
