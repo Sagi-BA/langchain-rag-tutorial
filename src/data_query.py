@@ -41,13 +41,13 @@ class DataQuery:
             print(f"Unable to find matching results.")
             return None
 
-        for i, (doc, score) in enumerate(results):
-            print(f"Result {i+1} - Score: {score}, Content: {doc.page_content[:500]}")  # Print first 500 chars of each result
+        # for i, (doc, score) in enumerate(results):
+        #     print(f"Result {i+1} - Score: {score}, Content: {doc.page_content[:500]}")  # Print first 500 chars of each result
 
         context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
         prompt_template = ChatPromptTemplate.from_template(self.PROMPT_TEMPLATE)
         prompt = prompt_template.format(context=context_text, question=query_text)
-        # print(f"Generated prompt: {prompt}")
+        print(f"Generated prompt: {prompt}")
 
         response_text = self.model.predict(prompt)
         # print(f"Response: {response_text}")
@@ -60,13 +60,18 @@ class DataQuery:
         return response_text
 
 # Example usage
-if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("query_text", type=str, help="The query text.")
-    args = parser.parse_args()
-    
+if __name__ == "__main__":    
+    prompt = 'מי היא הדמות המרכזית בסיפור'
     myquery = DataQuery()
-    result = myquery.query(args.query_text)
+    result = myquery.query(prompt)
     print(result)
+
+    # import argparse
+
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("query_text", type=str, help="The query text.")
+    # args = parser.parse_args()
+    
+    # myquery = DataQuery()
+    # result = myquery.query(args.query_text)
+    # print(result)
